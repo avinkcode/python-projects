@@ -5,13 +5,13 @@ if currency == "USD":
     print(f"${convert1} USD")
 elif currency == "LKR":
     convert2 = convert * 335.50
-    print(f"${convert2} USD")
+    print(f"${convert2} LKR")
 elif currency == "EUR":
     convert3 = convert * 0.88
-    print(f"${convert3} USD")
+    print(f"${convert3} EUR")
 elif currency == "CNY":
     convert4 = convert * 6.80
-    print(f"${convert4} USD")
+    print(f"${convert4} CNY")
 elif currency == "INR":
     convert5 = convert * 95.55
-    print(f"${convert5} USD")
+    print(f"${convert5} INR")
