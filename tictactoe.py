@@ -1,3 +1,4 @@
+import random
 if __name__ == "__main__":
    row1 = ["","",""]
    row2 = ["","",""]
@@ -9,22 +10,42 @@ if __name__ == "__main__":
       computer_choice = "o"
    elif player_choice == "o":
       computer_choice = "x"
-  
 
-   for k in range(3):
+   computer_row_choice = [1,2,3]
+   computer_col_choice = [0,1,2]
+
+   for k in range(4):
    
       player_row = int(input("what row would you like? pick between 1,2, or 3| "))
       player_column = int(input("what column would you like? pick between 0,1, or 2| "))
-      computer_row = ""
-      computer_collumn = ""
+
+      random.shuffle(computer_row_choice)
+      random.shuffle(computer_col_choice)
+      computer_row = computer_row_choice[0]
+      computer_collumn = computer_col_choice[0]
+
       print(player_choice,player_row,player_column)
-      print(f"computer picked: {computer_choice}")
+      print(f"computer picked: {computer_choice},{computer_row},{computer_collumn}")
+      if player_row == computer_row and player_column == computer_collumn:
+         print("the computer picked a spot that you picked")
+         continue
+
       if player_row == 1:
-          row1[player_column] = player_choice
+          if row1[player_column] == "": 
+            row1[player_column] = player_choice
+          else:
+             print("this slot is taken")
+
       elif player_row == 2:
-         row2[player_column] = player_choice
+         if row2[player_column] == "":
+            row2[player_column] = player_choice
+         else:
+            print("this slot is taken")
       elif player_row == 3:
-         row3[player_column] = player_choice
+         if row3[player_column] == "":        
+            row3[player_column] = player_choice
+         else:
+            print("this slot is taken")
 
       print(row1)
       print(row2)
