@@ -46,6 +46,23 @@ if __name__ == "__main__":
             row3[player_column] = player_choice
          else:
             print("this slot is taken")
+      if computer_row == 1:
+         if row1[computer_collumn] == "":
+            row1[computer_collumn] = computer_choice
+         else:
+            print("the computer picked a slot that was already chosen")
+      elif computer_row == 2:
+         if row2[computer_collumn] == "":
+            row2[computer_collumn] = computer_choice
+         else:
+            print("the computer picked a slot that was already chosen")
+      elif computer_row == 3:
+         if row3[computer_collumn] == "":
+            row3[computer_collumn] = computer_choice
+         else:
+            print("the computer picked a slot that was already chosen")
+
+         
 
       print(row1)
       print(row2)
