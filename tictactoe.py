@@ -1,4 +1,15 @@
 import random
+
+def game_over(row1, row2, row3):
+   if (row1[0] == row2[1] == row3[2]) or (row1[2] == row2[1] == row3[0]) or (row1[0] == row2[0] == row3[0]) or (row1[1] == row2[1] == row3[1]) or (row1[2] == row2[2] == row3[2]) or (row1[0] == row1[1] == row1[2]) or (row2[0] == row2[1] == row2[2]) or (row3[0] == row3[1] == row3[2]): 
+      print("you win!")
+      return True
+   else:
+      print("no one has won!")
+      return False
+
+
+
 if __name__ == "__main__":
    row1 = ["","",""]
    row2 = ["","",""]
@@ -14,7 +25,7 @@ if __name__ == "__main__":
    computer_row_choice = [1,2,3]
    computer_col_choice = [0,1,2]
 
-   for k in range(4):
+   while True:
    
       player_row = int(input("what row would you like? pick between 1,2, or 3| "))
       player_column = int(input("what column would you like? pick between 0,1, or 2| "))
@@ -46,6 +57,12 @@ if __name__ == "__main__":
             row3[player_column] = player_choice
          else:
             print("this slot is taken")
+            
+      status = game_over(row1,row2,row3)
+      if status == True:
+         break
+
+
       if computer_row == 1:
          if row1[computer_collumn] == "":
             row1[computer_collumn] = computer_choice
@@ -61,10 +78,16 @@ if __name__ == "__main__":
             row3[computer_collumn] = computer_choice
          else:
             print("the computer picked a slot that was already chosen")
+      
 
          
 
       print(row1)
       print(row2)
       print(row3)
-   
+
+      status = game_over(row1,row2,row3)
+      if status == True:
+         break
+      
+         
