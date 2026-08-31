@@ -1,7 +1,30 @@
 import random
 
+
 def game_over(row1, row2, row3):
-   if (row1[0] == row2[1] == row3[2]) or (row1[2] == row2[1] == row3[0]) or (row1[0] == row2[0] == row3[0]) or (row1[1] == row2[1] == row3[1]) or (row1[2] == row2[2] == row3[2]) or (row1[0] == row1[1] == row1[2]) or (row2[0] == row2[1] == row2[2]) or (row3[0] == row3[1] == row3[2]): 
+   if (row1[0] == 'x' and  row2[1] == 'x' and  row3[2] == 'x') or (row1[0] == 'o' and  row2[1] == 'o' and  row3[2] == 'o'):
+   
+      print("you win!")
+      return True
+   elif (row1[2] == 'x' and row2[1] == 'x' and row3[0] == 'x') or (row1[2] == 'o' and row2[1] == 'o' and row3[0] == 'o'):
+      print("you win!")
+      return True
+   elif (row1[0] == 'x' and row2[0] == 'x' and row3[0] == 'x') or (row1[0] == 'o' and row2[0] == 'o' and row3[0] == 'o'):
+      print("you win!")
+      return True
+   elif (row1[1] == 'x' and row2[1] == 'x' and row3[1] == 'x') or (row1[1] == 'o' and row2[1] == 'o' and row3[1] == 'o'):
+      print("you win!")
+      return True
+   elif (row1[2] == 'x' and row2[2] == 'x' and row3[2] == 'x') or (row1[2] == 'o' and row2[2] == 'o' and row3[2] == 'o'):
+      print("you win!")
+      return True
+   elif (row1[0] == 'x' and row1[1] == 'x' and row1[2] == 'x') or (row1[0] == 'o' and row1[1] == 'o' and row1[2] == 'o'):
+      print("you win!")
+      return True
+   elif (row2[0] == 'x' and row2[1] == 'x' and row2[2] == 'x') or (row2[0] == 'o' and row2[1] == 'o' and row2[2] == 'o'):
+      print("you win!")
+      return True
+   elif (row3[0] == "x" and row3[1] == 'x' and row3[2] == 'x') or (row3[0] == "o" and row3[1] == 'o' and row3[2] == 'o'):
       print("you win!")
       return True
    else:
