@@ -1,31 +1,57 @@
 import random
 
 
-def game_over(row1, row2, row3):
-   if (row1[0] == 'x' and  row2[1] == 'x' and  row3[2] == 'x') or (row1[0] == 'o' and  row2[1] == 'o' and  row3[2] == 'o'):
-   
+def game_over(row1, row2, row3, player_choice,computer_choice):
+   if (row1[0] == player_choice and  row2[1] == player_choice and  row3[2] == player_choice):
       print("you win!")
       return True
-   elif (row1[2] == 'x' and row2[1] == 'x' and row3[0] == 'x') or (row1[2] == 'o' and row2[1] == 'o' and row3[0] == 'o'):
+   elif (row1[0] == computer_choice and  row2[1] == computer_choice and  row3[2] == computer_choice):  
+      print("computer wins!")
+      return True
+   elif (row1[2] == computer_choice and row2[1] == computer_choice and row3[0] == computer_choice):
+      print("computer wins!")
+      return True
+   elif (row1[2] == player_choice and row2[1] == player_choice and row3[0] == player_choice):
       print("you win!")
       return True
-   elif (row1[0] == 'x' and row2[0] == 'x' and row3[0] == 'x') or (row1[0] == 'o' and row2[0] == 'o' and row3[0] == 'o'):
+   elif (row1[0] == player_choice and row2[0] == player_choice and row3[0] == player_choice):
       print("you win!")
       return True
-   elif (row1[1] == 'x' and row2[1] == 'x' and row3[1] == 'x') or (row1[1] == 'o' and row2[1] == 'o' and row3[1] == 'o'):
+   elif (row1[0] == computer_choice and row2[0] == computer_choice and row3[0] == computer_choice):
+      print("computer wins!")
+      return True
+   elif (row1[1] == player_choice and row2[1] == player_choice and row3[1] == player_choice):
       print("you win!")
       return True
-   elif (row1[2] == 'x' and row2[2] == 'x' and row3[2] == 'x') or (row1[2] == 'o' and row2[2] == 'o' and row3[2] == 'o'):
+   elif (row1[1] == computer_choice and row2[1] == computer_choice and row3[1] == computer_choice):
+      print("computer wins!")
+      return True
+   elif (row1[2] == player_choice and row2[2] == player_choice and row3[2] == player_choice):
       print("you win!")
       return True
-   elif (row1[0] == 'x' and row1[1] == 'x' and row1[2] == 'x') or (row1[0] == 'o' and row1[1] == 'o' and row1[2] == 'o'):
+   elif (row1[2] == computer_choice and row2[2] == computer_choice and row3[2] == computer_choice):
+      print("computer wins!")
+      return True
+   elif (row1[0] == player_choice and row1[1] == player_choice and row1[2] == player_choice):
       print("you win!")
       return True
-   elif (row2[0] == 'x' and row2[1] == 'x' and row2[2] == 'x') or (row2[0] == 'o' and row2[1] == 'o' and row2[2] == 'o'):
+   elif (row1[0] == computer_choice and row1[1] == computer_choice and row1[2] == computer_choice):
+      print("computer wins!")
+      return True
+   elif (row2[0] == player_choice and row2[1] == player_choice and row2[2] == player_choice):
       print("you win!")
       return True
-   elif (row3[0] == "x" and row3[1] == 'x' and row3[2] == 'x') or (row3[0] == "o" and row3[1] == 'o' and row3[2] == 'o'):
+   elif (row2[0] == computer_choice and row2[1] == computer_choice and row2[2] == computer_choice):
+      print("computer wins!")
+      return True
+   elif (row3[0] == player_choice and row3[1] == player_choice and row3[2] == player_choice):
       print("you win!")
+      return True
+   elif (row3[0] == computer_choice and row3[1] == computer_choice and row3[2] == computer_choice):
+      print("computer wins!")
+      return True
+   elif row1[0]!="" and row1[1]!="" and row1[2]!="" and row2[0]!="" and row2[1]!="" and row2[2]!="" and row3[0]!="" and row3[1]!="" and row3[2]!="":
+      print("the grid has been filled")
       return True
    else:
       print("no one has won!")
@@ -81,7 +107,7 @@ if __name__ == "__main__":
          else:
             print("this slot is taken")
             
-      status = game_over(row1,row2,row3)
+      status = game_over(row1,row2,row3,player_choice,computer_choice)
       if status == True:
          break
 
@@ -109,7 +135,7 @@ if __name__ == "__main__":
       print(row2)
       print(row3)
 
-      status = game_over(row1,row2,row3)
+      status = game_over(row1,row2,row3,player_choice,computer_choice)
       if status == True:
          break
       
