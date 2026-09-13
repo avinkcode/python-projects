@@ -1,4 +1,2 @@
 # python-projects
-These are my Python projects:D.       
-print("bruh
-")
+These are my Python projects:D.      
