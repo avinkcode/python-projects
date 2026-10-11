@@ -19,5 +19,17 @@ def calc_rectangle():
 
 
 
-calc_circumfrence_area()
-calc_rectangle()
+def day_count():
+    year = 365
+    week = 7
+    day = 1
+    user_input = int(input("Choose a amount of days "))
+    num_of_year = int(user_input / year)
+    remain_day = user_input % year
+    num_of_week =  int(remain_day/week)    
+    remain_day2 = remain_day % week
+    print(num_of_year)
+    print(num_of_week)
+    print(remain_day2)
+day_count()
+
